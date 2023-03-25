@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
 import request from 'supertest';
 import database from '../infrastructure/database/database';
 import { app } from '../infrastructure/server/server';
@@ -8,7 +10,7 @@ describe('Products Routes', () => {
   let testProductId: string;
 
   beforeAll(async () => {
-    database.connect();
+    database.connect(process.env.URI);
     response = await request(app).post('/products').send(testProduct);
     testProductId = response.body;
   });

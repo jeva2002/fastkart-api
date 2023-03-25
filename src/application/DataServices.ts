@@ -1,7 +1,7 @@
 import { IProduct, UpdateProductDTO } from '../domain/entities/product';
 
 export interface DataServices {
-  connect: () => Promise<any>;
+  connect: (URI: any) => Promise<any>;
   create: (product: IProduct) => Promise<string>;
   getAll: () => Promise<IProduct[]>;
   getOneById: (id: string) => Promise<IProduct>;

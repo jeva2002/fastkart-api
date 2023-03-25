@@ -1,10 +1,8 @@
 import mongoose from 'mongoose';
 
-export async function connect(): Promise<any> {
+export async function connect(URI: any): Promise<any> {
   try {
-    return await mongoose.connect(
-      'mongodb+srv://estebanari29:MlpWkqJDbxXs46dM@fastkart.qd07av9.mongodb.net/?retryWrites=true&w=majority'
-    );
+    return await mongoose.connect(URI ?? '');
   } catch (error) {
     throw new Error('There was an error trying to connect with the database');
   }
