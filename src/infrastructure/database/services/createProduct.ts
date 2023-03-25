@@ -6,7 +6,7 @@ export async function createProduct(
 ): Promise<string> {
   try {
     const newProduct = await Product.create(product);
-    return `New product generated with the id: ${newProduct._id}`;
+    return newProduct._id;
   } catch (error) {
     throw new Error('There was a problem creating the new product');
   }

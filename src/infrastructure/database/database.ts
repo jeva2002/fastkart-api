@@ -2,24 +2,20 @@ import { DataServices } from '../../application/DataServices';
 import { IProduct } from '../../domain/entities/product';
 import { connect, disconnect } from './services/connection';
 import { createProduct } from './services/createProduct';
-import { getAllProducts } from './services/getProduct';
+import { deleteProduct } from './services/deleteProduct';
+import { getAllProducts, getOneProduct } from './services/getProduct';
+import { updateProduct } from './services/updateProduct';
 
 const database: DataServices = {
   connect,
   create: createProduct,
   getAll: getAllProducts,
-  getOneById: function (id: string): Promise<IProduct> {
-    throw new Error('Function not implemented.');
-  },
+  getOneById: getOneProduct,
   getOneByFilter: function (filter: string): Promise<IProduct> {
     throw new Error('Function not implemented.');
   },
-  update: function (id: string): Promise<void> {
-    throw new Error('Function not implemented.');
-  },
-  delete: function (id: string): Promise<void> {
-    throw new Error('Function not implemented.');
-  },
+  update: updateProduct,
+  delete: deleteProduct,
   disconnect,
 };
 
