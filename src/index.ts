@@ -1,5 +1,5 @@
-import { database } from './infrastructure/database/database';
+import database from './infrastructure/database/database';
 import { server } from './infrastructure/server/server';
 
-database();
+database.connect();
 server();
