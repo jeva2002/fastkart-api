@@ -3,7 +3,7 @@ import database from '../infrastructure/database/database';
 import { app } from '../infrastructure/server/server';
 import { testProduct } from './product.mock';
 
-describe('Handle products routes', () => {
+describe('Products Routes', () => {
   let response: request.Response;
   let testProductId: string;
 
